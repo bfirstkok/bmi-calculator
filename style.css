@@ -1,0 +1,136 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Segoe UI', sans-serif;
+  padding: 1rem;
+}
+
+.card {
+  background: #fff;
+  border-radius: 20px;
+  padding: 2rem;
+  width: 100%;
+  max-width: 420px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+}
+
+h1 { text-align: center; margin-bottom: 1.25rem; font-size: 1.6rem; color: #333; }
+
+/* Unit toggle */
+.unit-toggle {
+  display: flex;
+  background: #f1f5f9;
+  border-radius: 10px;
+  padding: 3px;
+  margin-bottom: 1.25rem;
+}
+.unit-btn {
+  flex: 1;
+  border: none;
+  padding: 0.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  background: transparent;
+  font-size: 0.9rem;
+  color: #64748b;
+  transition: all 0.2s;
+}
+.unit-btn.active { background: #fff; color: #7c3aed; font-weight: 600; box-shadow: 0 1px 4px rgba(0,0,0,0.1); }
+
+/* Inputs */
+.inputs { margin-bottom: 0.75rem; }
+.row { display: flex; gap: 0.75rem; }
+.row label { flex: 1; }
+
+label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #475569;
+  margin-bottom: 0.75rem;
+}
+
+input[type="number"] {
+  padding: 0.65rem 0.9rem;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 10px;
+  font-size: 1rem;
+  color: #1e293b;
+  outline: none;
+  transition: border-color 0.2s;
+}
+input[type="number"]:focus { border-color: #7c3aed; }
+
+.gender-row {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  margin-bottom: 1.25rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #475569;
+}
+.gender-row label { flex-direction: row; align-items: center; gap: 0.3rem; margin: 0; font-weight: 400; color: #1e293b; }
+
+#calcBtn {
+  width: 100%;
+  padding: 0.85rem;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+#calcBtn:hover { opacity: 0.9; }
+
+/* Result */
+.result { margin-top: 1.5rem; text-align: center; }
+.bmi-value { font-size: 3.5rem; font-weight: 700; color: #1e293b; }
+.bmi-label {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0.25rem 0 1rem;
+  padding: 0.3rem 1.2rem;
+  border-radius: 20px;
+  display: inline-block;
+}
+
+/* Scale */
+.scale-bar {
+  height: 10px;
+  border-radius: 5px;
+  background: linear-gradient(to right, #38bdf8, #22c55e, #facc15, #ef4444);
+  position: relative;
+  margin-bottom: 0.4rem;
+}
+.scale-marker {
+  position: absolute;
+  top: -5px;
+  width: 20px;
+  height: 20px;
+  background: #fff;
+  border: 3px solid #333;
+  border-radius: 50%;
+  transform: translateX(-50%);
+  transition: left 0.5s;
+}
+.scale-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.7rem;
+  color: #94a3b8;
+  margin-bottom: 1rem;
+}
+
+.ideal { font-size: 0.85rem; color: #64748b; }
+.hidden { display: none !important; }

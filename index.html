@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BMI Calculator</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="card">
+    <h1>⚖️ BMI Calculator</h1>
+
+    <div class="unit-toggle">
+      <button class="unit-btn active" data-unit="metric">Metric</button>
+      <button class="unit-btn" data-unit="imperial">Imperial</button>
+    </div>
+
+    <div id="metricInputs" class="inputs">
+      <label>Height (cm)
+        <input type="number" id="heightCm" placeholder="e.g. 175" min="50" max="300" />
+      </label>
+      <label>Weight (kg)
+        <input type="number" id="weightKg" placeholder="e.g. 70" min="1" max="500" />
+      </label>
+    </div>
+
+    <div id="imperialInputs" class="inputs hidden">
+      <div class="row">
+        <label>Height (ft)
+          <input type="number" id="heightFt" placeholder="5" min="1" max="9" />
+        </label>
+        <label>Height (in)
+          <input type="number" id="heightIn" placeholder="11" min="0" max="11" />
+        </label>
+      </div>
+      <label>Weight (lbs)
+        <input type="number" id="weightLb" placeholder="e.g. 154" min="1" max="1000" />
+      </label>
+    </div>
+
+    <label>Age
+      <input type="number" id="age" placeholder="e.g. 25" min="2" max="120" />
+    </label>
+
+    <div class="gender-row">
+      <span>Gender</span>
+      <label><input type="radio" name="gender" value="male" checked /> Male</label>
+      <label><input type="radio" name="gender" value="female" /> Female</label>
+    </div>
+
+    <button id="calcBtn">Calculate BMI</button>
+
+    <div id="result" class="result hidden">
+      <div class="bmi-value" id="bmiValue"></div>
+      <div class="bmi-label" id="bmiLabel"></div>
+      <div class="bmi-scale">
+        <div class="scale-bar">
+          <div id="scaleMarker" class="scale-marker"></div>
+        </div>
+        <div class="scale-labels">
+          <span>Underweight</span><span>Normal</span><span>Overweight</span><span>Obese</span>
+        </div>
+      </div>
+      <p id="idealWeight" class="ideal"></p>
+    </div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
